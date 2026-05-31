@@ -7,7 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.StringParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
 import java.util.Collections;
 
 @BlockDefinition(id = "expr-string", name = "String", description = "A string literal")
@@ -23,7 +22,7 @@ public class ExprString extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/lang/String.html"));
     }
 
     public ExprString(String string) {

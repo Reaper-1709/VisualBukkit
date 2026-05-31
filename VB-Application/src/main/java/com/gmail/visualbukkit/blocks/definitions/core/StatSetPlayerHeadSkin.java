@@ -7,8 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "stat-set-player-head-skin", name = "Set Player Head Skin", description = "Sets the skin of a player head")
 public class StatSetPlayerHeadSkin extends StatementBlock {
 
@@ -19,7 +17,7 @@ public class StatSetPlayerHeadSkin extends StatementBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/inventory/meta/SkullMeta.html#setOwner(java.lang.String)"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/inventory/meta/SkullMeta.html#setOwner(java.lang.String)"));
     }
 
     @Override

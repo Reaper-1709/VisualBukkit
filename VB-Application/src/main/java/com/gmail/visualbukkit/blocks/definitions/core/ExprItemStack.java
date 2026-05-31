@@ -7,7 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
 import java.util.List;
 
 @BlockDefinition(id = "expr-itemstack", name = "ItemStack", description = "An ItemStack optionally with a name and lore")
@@ -21,7 +20,7 @@ public class ExprItemStack extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/inventory/ItemStack.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/inventory/ItemStack.html"));
     }
 
     @Override

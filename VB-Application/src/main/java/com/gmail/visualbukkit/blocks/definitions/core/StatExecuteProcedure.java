@@ -8,7 +8,6 @@ import com.gmail.visualbukkit.blocks.parameters.PluginComponentParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
 import java.util.List;
 
 @BlockDefinition(id = "stat-execute-procedure", name = "Execute Procedure", description = "Executes the given procedure")
@@ -21,7 +20,7 @@ public class StatExecuteProcedure extends StatementBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Supplier.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/util/function/Supplier.html"));
     }
 
     @Override

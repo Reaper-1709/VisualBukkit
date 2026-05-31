@@ -8,7 +8,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
 import java.util.StringJoiner;
 
 @BlockDefinition(id = "expr-string-concatenation", name = "String Concatenation", description = "Concatenates two or more strings")
@@ -21,7 +20,7 @@ public class ExprStringConcatenation extends SizedExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#concat(java.lang.String)"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/lang/String.html#concat(java.lang.String)"));
     }
 
     @Override

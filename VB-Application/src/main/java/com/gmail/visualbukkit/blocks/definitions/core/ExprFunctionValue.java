@@ -8,7 +8,6 @@ import com.gmail.visualbukkit.blocks.parameters.PluginComponentParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
 import java.util.List;
 
 @BlockDefinition(id = "expr-function-value", name = "Function Value", description = "Evaluates the given function")
@@ -21,7 +20,7 @@ public class ExprFunctionValue extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/util/function/Function.html"));
     }
 
     @Override

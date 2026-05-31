@@ -1140,6 +1140,14 @@ public class Project {
         return directory.getFileName().toString();
     }
 
+    public String getDEFAULT_JAVADOCS_URL() {
+        return DEFAULT_JAVADOCS_URL;
+    }
+
+    public String getDEFAULT_JAVA_JAVADOCS_URL() {
+        return DEFAULT_JAVA_JAVADOCS_URL;
+    }
+
     public Path getDirectory() {
         return directory;
     }

@@ -7,8 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-hex-colored-string", name = "Hex Colored String", description = "A string with '&' and hex color codes")
 public class ExprHexColoredString extends ExpressionBlock {
 
@@ -18,7 +16,7 @@ public class ExprHexColoredString extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/ChatColor.html#translateAlternateColorCodes(char,java.lang.String)"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/ChatColor.html#translateAlternateColorCodes(char,java.lang.String)"));
     }
 
     @Override

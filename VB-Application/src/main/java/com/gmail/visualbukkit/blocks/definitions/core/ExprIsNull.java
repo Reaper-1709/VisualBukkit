@@ -7,8 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-is-null", name = "Is Null", description = "Checks if an object is null")
 public class ExprIsNull extends ExpressionBlock {
 
@@ -18,7 +16,7 @@ public class ExprIsNull extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Objects.html#isNull(java.lang.Object)"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/util/Objects.html#isNull(java.lang.Object)"));
     }
 
     @Override

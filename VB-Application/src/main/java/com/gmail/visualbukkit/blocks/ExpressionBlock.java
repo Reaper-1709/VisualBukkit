@@ -6,7 +6,6 @@ import com.gmail.visualbukkit.blocks.definitions.gui.*;
 import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.project.CopyPasteManager;
-import com.gmail.visualbukkit.project.JavadocsManager;
 import com.gmail.visualbukkit.project.UndoManager;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 import com.gmail.visualbukkit.ui.ActionMenuItem;
@@ -22,8 +21,6 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.TransferMode;
 import javafx.scene.paint.Color;
 import org.json.JSONObject;
-
-import java.net.URI;
 
 public non-sealed abstract class ExpressionBlock extends Block {
 

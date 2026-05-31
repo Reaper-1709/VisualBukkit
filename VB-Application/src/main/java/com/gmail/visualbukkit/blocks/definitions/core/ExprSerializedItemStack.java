@@ -7,8 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.MultilineStringParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-serialized-itemstack", name = "Serialized ItemStack", description = "Creates an ItemStack from YAML")
 public class ExprSerializedItemStack extends ExpressionBlock {
 
@@ -20,7 +18,7 @@ public class ExprSerializedItemStack extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/inventory/ItemStack.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/inventory/ItemStack.html"));
     }
 
     public ExprSerializedItemStack(String yaml) {

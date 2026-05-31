@@ -8,8 +8,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "stat-while-loop", name = "While Loop", description = "Loops while a condition is true")
 public class StatWhileLoop extends ContainerBlock {
 
@@ -22,7 +20,7 @@ public class StatWhileLoop extends ContainerBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/entity/HumanEntity.html#openInventory(org.bukkit.inventory.Inventory)"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("https://docs.oracle.com/javase/tutorial/java/nutsandbolts/while.html"));
     }
 
     @Override

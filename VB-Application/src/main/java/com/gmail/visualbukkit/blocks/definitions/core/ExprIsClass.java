@@ -8,8 +8,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-is-class", name = "Is Class", description = "Checks if an object is an instance of a class")
 public class ExprIsClass extends ExpressionBlock {
 
@@ -22,7 +20,7 @@ public class ExprIsClass extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/lang/Class.html"));
     }
 
     @Override

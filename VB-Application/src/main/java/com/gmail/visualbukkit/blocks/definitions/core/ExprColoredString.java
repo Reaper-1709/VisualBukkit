@@ -7,8 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-colored-string", name = "Colored String", description = "A string with '&' color codes")
 public class ExprColoredString extends ExpressionBlock {
 
@@ -18,7 +16,7 @@ public class ExprColoredString extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/ChatColor.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/ChatColor.html"));
     }
 
     @Override

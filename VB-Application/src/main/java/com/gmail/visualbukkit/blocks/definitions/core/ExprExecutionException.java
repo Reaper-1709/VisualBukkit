@@ -6,8 +6,6 @@ import com.gmail.visualbukkit.blocks.ExpressionBlock;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-execution-exception", name = "Execution Exception", description = "The exception that occurred (must be used in 'Handle Exception')")
 public class ExprExecutionException extends ExpressionBlock {
 
@@ -23,6 +21,6 @@ public class ExprExecutionException extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Exception.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/lang/Exception.html"));
     }
 }

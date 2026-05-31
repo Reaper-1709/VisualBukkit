@@ -97,5 +97,8 @@ public non-sealed abstract class PluginComponentBlock extends Block {
         public void deserialize(JSONObject json) {
             this.json = json;
         }
+
+        @Override
+        public void openJavadocs() {}
     }
 }

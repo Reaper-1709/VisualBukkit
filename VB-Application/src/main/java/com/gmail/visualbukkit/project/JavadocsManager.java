@@ -1,7 +1,7 @@
 package com.gmail.visualbukkit.project;
 
 import com.gmail.visualbukkit.VisualBukkitApp;
-import com.gmail.visualbukkit.blocks.definitions.core.*;
+import com.gmail.visualbukkit.blocks.Block;
 import com.gmail.visualbukkit.blocks.parameters.ClassParameter;
 import com.gmail.visualbukkit.blocks.parameters.FieldParameter;
 import com.gmail.visualbukkit.blocks.parameters.MethodParameter;
@@ -26,42 +26,12 @@ public class JavadocsManager {
     }
 
     public static void getCompJavaDocs(PluginComponent pluginComponent) {
-        switch (pluginComponent.getBlockType().orElse("Unknown")) {
-            case "comp-command":
-                getJavadocs("org.bukkit.command.Command", "");
-                break;
-            case "comp-event-listener":
-                CompEventListener compEventListener = (CompEventListener) pluginComponent.getBlock().orElseGet(CompEventListener::new);
-                getJavadocs((compEventListener.getEvent().getPackage() + "/" + compEventListener.getEvent().toString().split("\\(")[0]).strip(), "");
-                break;
-            case "comp-plugin-enable":
-                getJavadocs("org.bukkit.plugin.java.JavaPlugin", "onEnable()");
-                break;
-            case "comp-plugin-disable":
-                getJavadocs("org.bukkit.plugin.java.JavaPlugin", "onDisable()");
-                break;
-            case "comp-tab-complete-handler":
-                getJavadocs("org.bukkit.command.TabCompleter", "onTabComplete()");
-                break;
-            case "comp-gui":
-                getJavadocs("org.bukkit.inventory.Inventory", "");
-                break;
-            case "comp-gui-click-handler":
-                getJavadocs("org.bukkit.event.inventory.InventoryClickEvent", "");
-                break;
-            case "comp-function":
-                getJavadocs("java.util.function.Function", "");
-                break;
-            case "comp-procedure":
-                getJavadocs("java.util.function.Supplier", "");
-                break;
-            case "comp-consumer":
-                getJavadocs("java.util.function.Consumer", "");
-                break;
-
-            default:
-                VisualBukkitApp.getLogger().warning("No Javadocs available for this component: " + pluginComponent.getBlockType().orElse("Unknown"));
-        }
+        pluginComponent.getBlock().ifPresentOrElse(
+                Block::openJavadocs,
+                () -> VisualBukkitApp.getLogger().warning(
+                        "No Javadocs available for this component: " + pluginComponent.getBlockType().orElse("Unknown")
+                )
+        );
     }
 
     private static void getJavadocs(String className, String methodName) {
@@ -86,8 +56,35 @@ public class JavadocsManager {
 
             for (String packageName : packages) {
                 if (className.startsWith(packageName)) {
-                    String url = baseUrl + className.replaceAll("\\.", "/") + ".html#" + methodName;
+                    String[] segments = className.split("\\.");
+                    StringBuilder packagePathBuilder = new StringBuilder();
+                    StringBuilder classPartBuilder = new StringBuilder();
+                    boolean inClass = false;
+                    for (String segment : segments) {
+                        if (!inClass && !segment.isEmpty() && Character.isUpperCase(segment.charAt(0))) {
+                            inClass = true;
+                        }
+                        if (inClass) {
+                            if (!classPartBuilder.isEmpty()) {
+                                classPartBuilder.append('.');
+                            }
+                            classPartBuilder.append(segment);
+                        } else {
+                            if (!packagePathBuilder.isEmpty()) {
+                                packagePathBuilder.append('/');
+                            }
+                            packagePathBuilder.append(segment);
+                        }
+                    }
+                    if (classPartBuilder.isEmpty() && segments.length > 0) {
+                        classPartBuilder.append(segments[segments.length - 1]);
+                    }
+                    String url = baseUrl + packagePathBuilder + "/" + classPartBuilder + ".html";
+                    if (!methodName.isBlank()) {
+                        url += "#" + methodName;
+                    }
                     VisualBukkitApp.openURI(URI.create(url));
+                    VisualBukkitApp.getLogger().info("Opening Javadocs: " + url);
                     return;
                 }
             }

@@ -6,7 +6,6 @@ import com.gmail.visualbukkit.blocks.ExpressionBlock;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
 import java.util.List;
 
 @BlockDefinition(id = "expr-function-arguments", name = "Function Arguments", description = "The list of arguments passed to a function (must be used in a 'Function' plugin component)")
@@ -20,7 +19,7 @@ public class ExprFunctionArguments extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/function/Function.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/util/function/Function.html"));
     }
 
     @Override

@@ -8,7 +8,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
 import java.util.List;
 import java.util.StringJoiner;
 
@@ -44,6 +43,6 @@ public class ExprImmutableList extends SizedExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("java/util/List.html"));
     }
 }

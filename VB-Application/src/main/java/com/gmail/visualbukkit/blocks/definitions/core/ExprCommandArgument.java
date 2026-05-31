@@ -7,8 +7,6 @@ import com.gmail.visualbukkit.blocks.parameters.ExpressionParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-command-argument", name = "Command Argument", description = "An argument passed to a command (must be used in a 'Command' or 'Tab Complete Handler' plugin component)")
 public class ExprCommandArgument extends ExpressionBlock {
 
@@ -29,7 +27,7 @@ public class ExprCommandArgument extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/command/Command.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/command/Command.html"));
     }
 
     @Override

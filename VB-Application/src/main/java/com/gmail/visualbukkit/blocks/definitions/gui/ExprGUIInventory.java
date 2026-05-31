@@ -6,8 +6,6 @@ import com.gmail.visualbukkit.blocks.ExpressionBlock;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-gui-inventory", name = "GUI Inventory", description = "Must be used in a 'GUI' plugin component")
 public class ExprGUIInventory extends ExpressionBlock {
 
@@ -19,7 +17,7 @@ public class ExprGUIInventory extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/event/inventory/InventoryClickEvent.html#getView()"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/event/inventory/InventoryClickEvent.html#getView()"));
     }
 
     @Override

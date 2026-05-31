@@ -8,8 +8,6 @@ import com.gmail.visualbukkit.blocks.parameters.PluginComponentParameter;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "stat-open-gui", name = "Open GUI", description = "Opens a GUI to a player")
 public class StatOpenGUI extends StatementBlock {
 
@@ -20,7 +18,7 @@ public class StatOpenGUI extends StatementBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/entity/HumanEntity.html#openInventory(org.bukkit.inventory.Inventory)"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/entity/HumanEntity.html#openInventory(org.bukkit.inventory.Inventory)"));
     }
 
     @Override

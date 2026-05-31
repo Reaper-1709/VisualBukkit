@@ -6,8 +6,6 @@ import com.gmail.visualbukkit.blocks.ExpressionBlock;
 import com.gmail.visualbukkit.project.BuildInfo;
 import com.gmail.visualbukkit.reflection.ClassInfo;
 
-import java.net.URI;
-
 @BlockDefinition(id = "expr-gui-player", name = "GUI Player", description = "Must be used in a 'GUI' plugin component")
 public class ExprGUIPlayer extends ExpressionBlock {
 
@@ -19,7 +17,7 @@ public class ExprGUIPlayer extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(URI.create("https://jd.papermc.io/paper/1.21.4/org/bukkit/entity/Player.html"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/entity/Player.html"));
     }
 
     @Override
