@@ -10,7 +10,7 @@ import com.gmail.visualbukkit.reflection.ClassInfo;
 import java.net.URI;
 
 @BlockDefinition(id = "stat-bungeecord-connect", name = "BungeeCord Connect", description = "Connects a player to a BungeeCord server")
-public class  StatBungeeCordConnect extends StatementBlock {
+public class StatBungeeCordConnect extends StatementBlock {
 
     public StatBungeeCordConnect() {
         addParameter("Player", new ExpressionParameter(ClassInfo.of("org.bukkit.entity.Player")));
