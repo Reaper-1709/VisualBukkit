@@ -34,7 +34,7 @@ public class CompEventListener extends PluginComponentBlock {
 
     @Override
     public void openJavadocs() {
-        String eventPath = (getEvent().getPackage() + "/" + getEvent().toString().split("\\(")[0]).strip();
-        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI(eventPath));
+        String eventPath = (getEvent().getPackage().replace('.', '/') + "/" + getEvent().toString().split("\\(")[0]).strip();
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI(eventPath + ".html"));
     }
 }

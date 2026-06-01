@@ -39,7 +39,7 @@ public class CompCommand extends PluginComponentBlock {
 
     @Override
     public void openJavadocs() {
-        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/command/Command"));
+        VisualBukkitApp.openURI(VisualBukkitApp.javadocsURI("org/bukkit/command/Command.html"));
     }
 
     @Override
