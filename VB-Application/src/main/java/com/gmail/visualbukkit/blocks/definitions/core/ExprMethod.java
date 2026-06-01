@@ -1,5 +1,6 @@
 package com.gmail.visualbukkit.blocks.definitions.core;
 
+import com.gmail.visualbukkit.VisualBukkitApp;
 import com.gmail.visualbukkit.blocks.BlockDefinition;
 import com.gmail.visualbukkit.blocks.ExpressionBlock;
 import com.gmail.visualbukkit.blocks.parameters.ClassParameter;
@@ -25,7 +26,12 @@ public class ExprMethod extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        JavadocsManager.getExprJavadocs(classParameter, methodParameter);
+        try {
+            JavadocsManager.getExprJavadocs(classParameter, methodParameter);
+        } catch (NullPointerException e) {
+            VisualBukkitApp.displayError("Cannot open javadocs for method as\n no class and/or method is selected");
+            VisualBukkitApp.getLogger().warning("Cannot open javadocs for method because no class and/or method is selected");
+        }
     }
 
     public ExprMethod(ClassInfo clazz, MethodInfo method, ExpressionBlock... parameterExpressions) {

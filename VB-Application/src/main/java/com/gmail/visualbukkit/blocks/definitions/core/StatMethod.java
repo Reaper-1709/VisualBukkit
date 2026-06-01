@@ -1,5 +1,6 @@
 package com.gmail.visualbukkit.blocks.definitions.core;
 
+import com.gmail.visualbukkit.VisualBukkitApp;
 import com.gmail.visualbukkit.blocks.BlockDefinition;
 import com.gmail.visualbukkit.blocks.ExpressionBlock;
 import com.gmail.visualbukkit.blocks.StatementBlock;
@@ -26,7 +27,12 @@ public class StatMethod extends StatementBlock {
 
     @Override
     public void openJavadocs() {
-        JavadocsManager.getStatJavadocs(classParameter, methodParameter);
+        try {
+            JavadocsManager.getStatJavadocs(classParameter, methodParameter);
+        } catch (NullPointerException e) {
+            VisualBukkitApp.displayError("Cannot open javadocs for method as\n no class and/or method is selected");
+            VisualBukkitApp.getLogger().warning("Cannot open javadocs for method because no class and/or method is selected");
+        }
     }
 
     public StatMethod(ClassInfo clazz, MethodInfo method, ExpressionBlock... parameterExpressions) {

@@ -1,5 +1,6 @@
 package com.gmail.visualbukkit.blocks.definitions.core;
 
+import com.gmail.visualbukkit.VisualBukkitApp;
 import com.gmail.visualbukkit.blocks.BlockDefinition;
 import com.gmail.visualbukkit.blocks.ExpressionBlock;
 import com.gmail.visualbukkit.blocks.parameters.ClassParameter;
@@ -22,7 +23,12 @@ public class ExprField extends ExpressionBlock {
 
     @Override
     public void openJavadocs() {
-        JavadocsManager.getExprJavadocs(classParameter, fieldParameter);
+        try {
+            JavadocsManager.getExprJavadocs(classParameter, fieldParameter);
+        } catch (NullPointerException e) {
+            VisualBukkitApp.displayError("Cannot open javadocs for field as\n no class and/or field is selected");
+            VisualBukkitApp.getLogger().warning("Cannot open javadocs for field because no class and/or field is selected");
+        }
     }
 
     @Override
